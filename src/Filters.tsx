@@ -20,21 +20,28 @@ export function DataFilters() {
 
   return (
     <div>
-      <h2>Data Form State</h2>
+      <h2>
+        <span role="img" aria-label="clipboard">
+          📋
+        </span>
+        <span> Data Filters</span>
+      </h2>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="search" placeholder="Notes" {...register('notes')} />
         <select {...register('ranking')}>
           <option value={Ranking.Gold}>Gold</option>
           <option value={Ranking.Silver}>Silver</option>
           <option value={Ranking.Bronze}>Bronze</option>
         </select>
+
         <select {...register('position')}>
           <option value={Position.Keeper}>Keeper</option>
           <option value={Position.Defense}>Defense</option>
           <option value={Position.Mid}>Mid</option>
           <option value={Position.Attack}>Attack</option>
         </select>
+
+        <input type="search" placeholder="Notes" {...register('notes')} />
 
         <input type="submit" />
       </form>
@@ -65,10 +72,16 @@ export function DateFilters() {
 
   return (
     <div>
-      <h2>Dates Form State</h2>
+      <h2>
+        <span role="img" aria-label="alarm clock">
+          ⏰
+        </span>
+        <span> Date Filters</span>
+      </h2>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="date" placeholder="Start date" {...register('fromDate')} />
+
         <input type="date" placeholder="End date" {...register('toDate')} />
 
         <input type="submit" />
